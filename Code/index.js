@@ -1,6 +1,6 @@
 // FR : Ajout de la classe discord.js dans mon répertoire + de mon token dans mon fichier config.json
 // EN : Require the necessary discord.js classes
-const { Client, GatewayIntentBits } = require('../Discord/node_modules/discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const { token } = require("../Config/config.json");
 
 // FR : Créer une nouvelle instance de client
@@ -11,6 +11,19 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 // EN : When the client is ready, run this code (only once)
 client.once('ready',() => {
     console.log("Je suis prêt !");
+});
+
+
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isChatInputCommand()) return;
+
+	const { commandName } = interaction;
+
+	if (commandName === 'test') {
+		await interaction.reply('Hello World!');
+	}else if(commandName === 'test2'){
+        await interaction.reply(`Hello World! ${interaction.options.getString('input')}`)
+    }
 });
 
 // FR : Connexion à Discord grâce au token de notre client
