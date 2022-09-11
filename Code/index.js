@@ -13,7 +13,8 @@ client.once('ready',() => {
     console.log("Je suis prêt !");
 });
 
-
+// FR : C'est ici que l'on va avoir le code des différentes commandes qui sont utilisées par le bot
+// EN : It's the place where we can find the code of differents commands which are used by the botw
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 

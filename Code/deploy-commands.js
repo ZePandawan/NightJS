@@ -3,8 +3,11 @@ const { REST } = require("@discordjs/rest");
 const { clientId,  guildId, token } = require('../Config/config.json');
 
 const commands = [
-    new SlashCommandBuilder().setName('test').setDescription('Print "Hello World !"'),
-    new SlashCommandBuilder().setName('test2').setDescription('Print "Hello World !" + your message')
+    new SlashCommandBuilder().setName('test')
+                            .setDescription('Print "Hello World !"'),
+                            
+    new SlashCommandBuilder().setName('test2')
+                            .setDescription('Print "Hello World !" + your message')
                             .addStringOption(option => option.setName('input')
                                                             .setDescription('the message that will follow "Hello World!"')
                                                             .setRequired(true)),
