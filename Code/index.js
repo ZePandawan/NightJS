@@ -21,7 +21,7 @@ client.on('interactionCreate', async interaction => {
 	const { commandName } = interaction;
 
 	if (commandName === 'test') {
-		await interaction.reply('Hello World!');
+		//await interaction.reply('Hello World!');
 	}else if(commandName === 'test2'){
         await interaction.reply(`Hello World! ${interaction.options.getString('input')}`)
     }
