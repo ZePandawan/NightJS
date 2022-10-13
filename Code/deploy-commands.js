@@ -1,3 +1,5 @@
+// FR : Ce fichier permet d'intégrer les différentes commandes du serveur en tant que "commandes slash" sur Discord
+// EN : This file allows you to integrate the different server commands as "slash commands" on Discord
 const { SlashCommandBuilder , Routes } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { clientId,  guildId, token } = require('../Config/config.json');
