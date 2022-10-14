@@ -1,5 +1,3 @@
-// FR : Ce fichier permet d'intégrer les différentes commandes du serveur en tant que "commandes slash" sur Discord
-// EN : This file allows you to integrate the different server commands as "slash commands" on Discord
 const { SlashCommandBuilder , Routes } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { clientId,  guildId, token } = require('../Config/config.json');
@@ -13,6 +11,11 @@ const commands = [
                             .addStringOption(option => option.setName('input')
                                                             .setDescription('the message that will follow "Hello World!"')
                                                             .setRequired(true)),
+
+    new SlashCommandBuilder().setName('hour')
+                            .setDescription('Return actual hour:min:sec'),
+    new SlashCommandBuilder().setName('day')
+                            .setDescription('Return the actual day/month/year'),
 ]
     .map(command => command.toJSON());
 

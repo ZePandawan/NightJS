@@ -21,10 +21,15 @@ client.on('interactionCreate', async interaction => {
 	const { commandName } = interaction;
 
 	if (commandName === 'test') {
-		//await interaction.reply('Hello World!');
+		const com_test = require('./test');
+		await com_test.test_again(interaction);
 	}else if(commandName === 'test2'){
-        await interaction.reply(`Hello World! ${interaction.options.getString('input')}`)
-    }
+        const com_test2 = require('./test2');
+		await com_test2.test2_again(interaction);
+    }else if(commandName === 'hour'){
+		const com_hour = require('./hour');
+		await com_hour.get_hour(interaction);
+	}
 });
 
 // FR : Connexion à Discord grâce au token de notre client
