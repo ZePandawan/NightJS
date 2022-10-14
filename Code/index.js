@@ -29,6 +29,9 @@ client.on('interactionCreate', async interaction => {
     }else if(commandName === 'hour'){
 		const com_hour = require('./hour');
 		await com_hour.get_hour(interaction);
+	}else if(commandName === 'day'){
+		const com_day = require('./day')
+		await com_day.get_day(interaction);
 	}
 });
 
