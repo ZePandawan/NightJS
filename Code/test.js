@@ -1,3 +1,6 @@
-const { Client, GatewayIntentBits } = require('discord.js');
-const { token } = require("../Config/config.json");
+module.exports = {
+    test_again: async function (interaction) {
+        await interaction.reply('Hello World !');
+    }
+};
 

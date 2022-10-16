@@ -11,6 +11,11 @@ const commands = [
                             .addStringOption(option => option.setName('input')
                                                             .setDescription('the message that will follow "Hello World!"')
                                                             .setRequired(true)),
+
+    new SlashCommandBuilder().setName('hour')
+                            .setDescription('Return actual hour:min:sec'),
+    new SlashCommandBuilder().setName('day')
+                            .setDescription('Return the actual day/month/year'),
 ]
     .map(command => command.toJSON());
 
