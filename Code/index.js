@@ -38,3 +38,5 @@ client.on('interactionCreate', async interaction => {
 // FR : Connexion à Discord grâce au token de notre client
 // EN : Login to Discord with your client's token
 client.login(token);
+
+//doing a test
