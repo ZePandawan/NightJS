@@ -1,5 +1,5 @@
 {
-  "name": "nodejs",
+  "name": "discord",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,5 +17,13 @@
   },
   "devDependencies": {
     "@cucumber/cucumber": "^8.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZePandawan/NightJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZePandawan/NightJS/issues"
+  },
+  "homepage": "https://github.com/ZePandawan/NightJS#readme"
 }
