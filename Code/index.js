@@ -39,4 +39,4 @@ client.on('interactionCreate', async interaction => {
 // EN : Login to Discord with your client's token
 client.login(token);
 
-//doing a test
+//doing another test
