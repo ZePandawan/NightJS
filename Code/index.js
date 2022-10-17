@@ -1,37 +1,38 @@
 // FR : Ajout de la classe discord.js dans mon répertoire + de mon token dans mon fichier config.json
 // EN : Require the necessary discord.js classes
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { token } = require("../Config/config.json");
+const fs = require("fs");
 
 // FR : Créer une nouvelle instance de client
 // EN : Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+
+client.commands = new Collection();
+const commandFiles = fs.readdirSync('./Code/commands').filter(file => file.endsWith('.js'));
+for (const file of commandFiles) {
+  let commandConfig = require(`./commands/${file}`);
+  client.commands.set(file.replace('.js', ''), commandConfig);
+}
+
 // FR : Une fois que le client est prêt, le code ci-dessous va être exécuté (une seule fois)
 // EN : When the client is ready, run this code (only once)
 client.once('ready',() => {
-    console.log("Je suis prêt !");
+	console.log("Je suis prêt !");
 });
 
 // FR : C'est ici que l'on va avoir le code des différentes commandes qui sont utilisées par le bot
 // EN : It's the place where we can find the code of differents commands which are used by the botw
 client.on('interactionCreate', async interaction => {
+
+
 	if (!interaction.isChatInputCommand()) return;
 
 	const { commandName } = interaction;
 
-	if (commandName === 'test') {
-		const com_test = require('./test');
-		await com_test.test_again(interaction);
-	}else if(commandName === 'test2'){
-        const com_test2 = require('./test2');
-		await com_test2.test2_again(interaction);
-    }else if(commandName === 'hour'){
-		const com_hour = require('./hour');
-		await com_hour.get_hour(interaction);
-	}else if(commandName === 'day'){
-		const com_day = require('./day')
-		await com_day.get_day(interaction);
+	if(client.commands.has(commandName)){
+		client.commands.get(commandName).run(client, interaction).catch(console.error);
 	}
 });
 
