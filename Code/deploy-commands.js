@@ -16,6 +16,12 @@ const commands = [
                             .setDescription('Return actual hour:min:sec'),
     new SlashCommandBuilder().setName('day')
                             .setDescription('Return the actual day/month/year'),
+    new SlashCommandBuilder().setName('salute')
+                            .setDescription('Salute someone on this server'),
+    new SlashCommandBuilder().setName('nbmembers')
+                            .setDescription('Return the number of people actually on the server (excepting bots)'),
+    new SlashCommandBuilder().setName('listmembers')
+                            .setDescription('Return the list of people actually on the server (excepting bots)'),
 ]
     .map(command => command.toJSON());
 
