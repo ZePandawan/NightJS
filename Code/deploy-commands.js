@@ -8,9 +8,10 @@ const commands = [
                             
     new SlashCommandBuilder().setName('test2')
                             .setDescription('Print "Hello World !" + your message')
-                            .addStringOption(option => option.setName('input')
-                                                            .setDescription('the message that will follow "Hello World!"')
-                                                            .setRequired(true)),
+                            .addStringOption(option =>
+                                option.setName('input')
+                                    .setDescription('the message that will follow "Hello World!"')
+                                    .setRequired(true)),
 
     new SlashCommandBuilder().setName('hour')
                             .setDescription('Return actual hour:min:sec'),
@@ -22,6 +23,16 @@ const commands = [
                             .setDescription('Return the number of people actually on the server (excepting bots)'),
     new SlashCommandBuilder().setName('listmembers')
                             .setDescription('Return the list of people actually on the server (excepting bots)'),
+    new SlashCommandBuilder().setName('createrole')
+                            .setDescription('Allow you to create a role')
+                            .addStringOption(option =>
+                                option.setName('role')
+                                    .setDescription('role name')
+                                    .setRequired(true))
+                            .addBooleanOption(option =>
+                                option.setName('admin')
+                                    .setDescription('Select True if the role has to be administrator')
+                                    .setRequired(true)),
 ]
     .map(command => command.toJSON());
 
