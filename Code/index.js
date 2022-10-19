@@ -1,12 +1,17 @@
 // FR : Ajout de la classe discord.js dans mon répertoire + de mon token dans mon fichier config.json
 // EN : Require the necessary discord.js classes
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Collection, MessageMentions, GuildMemberManager, EmbedBuilder } = require('discord.js');
 const { token } = require("../Config/config.json");
 const fs = require("fs");
 
 // FR : Créer une nouvelle instance de client
 // EN : Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, 
+	GatewayIntentBits.GuildMembers, 
+	GatewayIntentBits.GuildVoiceStates,
+	GatewayIntentBits.GuildMessages,
+	GatewayIntentBits.MessageContent,
+	GatewayIntentBits.GuildPresences] });
 
 
 client.commands = new Collection();
@@ -19,6 +24,8 @@ for (const file of commandFiles) {
 // FR : Une fois que le client est prêt, le code ci-dessous va être exécuté (une seule fois)
 // EN : When the client is ready, run this code (only once)
 client.once('ready',() => {
+	const Guilds = client.guilds.cache.map(guild => guild.id);
+    console.log(Guilds);
 	console.log("Je suis prêt !");
 });
 
@@ -30,6 +37,10 @@ client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
 	const { commandName } = interaction;
+	
+	//console.log(interaction);
+	console.log(interaction.guild.members.fetch());
+
 
 	if(client.commands.has(commandName)){
 		client.commands.get(commandName).run(client, interaction).catch(console.error);
