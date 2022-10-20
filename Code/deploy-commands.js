@@ -33,6 +33,8 @@ const commands = [
                                 option.setName('admin')
                                     .setDescription('Select True if the role has to be administrator')
                                     .setRequired(true)),
+    new SlashCommandBuilder().setName('readdb')
+                            .setDescription('Trying to read datas from db'),
 ]
     .map(command => command.toJSON());
 

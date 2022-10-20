@@ -4,6 +4,7 @@ const { Client, GatewayIntentBits, Collection, MessageMentions, GuildMemberManag
 const { token } = require("../Config/config.json");
 const fs = require("fs");
 
+
 // FR : Créer une nouvelle instance de client
 // EN : Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, 
