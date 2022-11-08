@@ -1,4 +1,4 @@
-const {my_host, my_user, my_password} = require("../../Config/mysql.json");
+//const {my_host, my_user, my_password} = require("../../Config/mysql.json");
 const mysql = require("mysql"); 
 
 exports.run = async (client, interaction) => {
