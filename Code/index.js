@@ -25,8 +25,8 @@ for (const file of commandFiles) {
 // FR : Une fois que le client est prêt, le code ci-dessous va être exécuté (une seule fois)
 // EN : When the client is ready, run this code (only once)
 client.once('ready',() => {
-	//const Guilds = client.guilds.cache.map(guild => guild.id);
-	const Guilds = client.guilds.cache;
+	const Guilds = client.guilds.cache.map(guild => guild.id);
+	//const Guilds = client.guilds.cache;
     console.log(Guilds);
 	console.log("Je suis prêt !");
 });
