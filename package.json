@@ -17,7 +17,7 @@
     "utf-8-validate": "^5.0.9"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^8.6.0"
+    "@cucumber/cucumber": "^8.7.0"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/ZePandawan/NightJS/issues"
   },
-  "homepage": "https://github.com/ZePandawan/NightJS#readme"
+  "homepage": "https://github.com/ZePandawan/NightJS#readme",
+  "scripts": {
+    "test": "mocha Code/index-test.js"
+  }
 }

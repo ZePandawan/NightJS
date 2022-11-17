@@ -1,3 +1,43 @@
+class Todos {
+	constructor() {
+		this.todos = [];
+	}
+
+	list() {
+		return [...this.todos];
+	}
+
+	add(title) {
+		let todo = {
+			title: title,
+			completed: false,
+		}
+
+		this.todos.push(todo);
+	}
+
+	complete(title) {
+		let todoFound = false;
+		this.todos.forEach((todo) => {
+			if (todo.title === title) {
+				todo.completed = true;
+				todoFound = true;
+				return;
+			}
+		});
+
+		if (!todoFound) {
+			throw new Error(`No TODO was found with the title: "${title}"`);
+		}
+	}
+
+}
+
+module.exports = Todos;
+
+
+
+
 // FR : Ajout de la classe discord.js dans mon répertoire + de mon token dans mon fichier config.json
 // EN : Require the necessary discord.js classes
 const { Client, GatewayIntentBits, Collection, MessageMentions, GuildMemberManager, EmbedBuilder } = require('discord.js');
