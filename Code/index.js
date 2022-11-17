@@ -26,6 +26,7 @@ for (const file of commandFiles) {
 // EN : When the client is ready, run this code (only once)
 client.once('ready',() => {
 	const Guilds = client.guilds.cache.map(guild => guild.id);
+	//const Guilds = client.guilds.cache;
     console.log(Guilds);
 	console.log("Je suis prêt !");
 });
