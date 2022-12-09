@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha ./Code/index.test.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,11 +21,14 @@
     "libsodium-wrappers": "^0.7.10",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+    "nyc": "^15.1.0",
     "opusscript": "^0.0.8",
     "utf-8-validate": "^5.0.9"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^8.6.0"
+    "@cucumber/cucumber": "^8.6.0",
+    "mocha": "^10.1.0",
+    "request": "^2.88.2"
   },
   "repository": {
     "type": "git",
@@ -35,5 +38,6 @@
     "url": "https://github.com/ZePandawan/NightJS/issues"
   },
   "homepage": "https://github.com/ZePandawan/NightJS#readme",
+  "keywords": [],
   "description": ""
 }
