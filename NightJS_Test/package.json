@@ -1,0 +1,43 @@
+{
+  "name": "discord",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha ./Code/index.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/rest": "^1.1.0",
+    "@discordjs/voice": "^0.11.0",
+    "bufferutil": "^4.0.6",
+    "discord-tts": "^1.2.2",
+    "discord.js": "^14.7.0",
+    "discord.js-mock-interactions": "^0.1.5",
+    "ffmpeg": "^0.0.4",
+    "google-tts-api": "^2.0.2",
+    "jshint": "^2.13.6",
+    "libsodium-wrappers": "^0.7.10",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "nyc": "^15.1.0",
+    "opusscript": "^0.0.8",
+    "utf-8-validate": "^5.0.9"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^8.6.0",
+    "mocha": "^10.1.0",
+    "request": "^2.88.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZePandawan/NightJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZePandawan/NightJS/issues"
+  },
+  "homepage": "https://github.com/ZePandawan/NightJS#readme",
+  "keywords": [],
+  "description": ""
+}
