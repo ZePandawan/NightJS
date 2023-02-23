@@ -35,6 +35,12 @@ const commands = [
                                     .setRequired(true)),
     new SlashCommandBuilder().setName('readdb')
                             .setDescription('Trying to read datas from db'),
+    new SlashCommandBuilder().setName('lol-info')
+                            .setDescription("Tell you some informations about someone profile")
+                            .addStringOption(option =>
+                                option.setName('player')
+                                    .setDescription("test")
+                                    .setRequired(true)),
 ]
     .map(command => command.toJSON());
 
