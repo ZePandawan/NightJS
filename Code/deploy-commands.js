@@ -35,12 +35,25 @@ const commands = [
                                     .setRequired(true)),
     new SlashCommandBuilder().setName('readdb')
                             .setDescription('Trying to read datas from db'),
+<<<<<<< Updated upstream
     new SlashCommandBuilder().setName('lol-info')
                             .setDescription("Tell you some informations about someone profile")
                             .addStringOption(option =>
                                 option.setName('player')
                                     .setDescription("test")
                                     .setRequired(true)),
+=======
+    new SlashCommandBuilder().setName('tts')
+                            .setDescription('Speak')
+                            .addStringOption(option =>
+                                option.setName('message')
+                                    .setDescription('message to read')
+                                    .setRequired(true))
+                            .addStringOption(option =>
+                                option.setName('language')
+                                    .setDescription('Nothing : fr , or put 2 letters of your language (fr,en,es,...)')
+                                    .setRequired(false)),
+>>>>>>> Stashed changes
 ]
     .map(command => command.toJSON());
 

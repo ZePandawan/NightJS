@@ -40,19 +40,21 @@ module.exports = Todos;
 
 // FR : Ajout de la classe discord.js dans mon répertoire + de mon token dans mon fichier config.json
 // EN : Require the necessary discord.js classes
-const { Client, GatewayIntentBits, Collection, MessageMentions, GuildMemberManager, EmbedBuilder } = require('discord.js');
+const { Client, Intents, GatewayIntentBits, Collection, MessageMentions, GuildMemberManager, EmbedBuilder } = require('discord.js');
 const { token } = require("../Config/config.json");
 const fs = require("fs");
 
 
 // FR : Créer une nouvelle instance de client
 // EN : Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds, 
+const client = new Client({ intents: [GatewayIntentBits.Guilds,
 	GatewayIntentBits.GuildMembers, 
 	GatewayIntentBits.GuildVoiceStates,
 	GatewayIntentBits.GuildMessages,
 	GatewayIntentBits.MessageContent,
 	GatewayIntentBits.GuildPresences] });
+
+//const client = new Client({intents:[Intents.FLAGS.GUILDS,Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_VOICE_STATES,]})
 
 
 client.commands = new Collection();
